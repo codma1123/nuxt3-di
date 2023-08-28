@@ -1,0 +1,49 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "client: chrome",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src",
+      "presentation": {
+        "hidden": true,
+        "group": "",
+        "order": 1
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "server: nuxt",
+      "outputCapture": "std",
+      "program": "${workspaceFolder}/node_modules/nuxi/bin/nuxi.mjs",
+      "args": [
+        "dev"
+      ],
+      "presentation": {
+        "hidden": true,
+        "group": "",
+        "order": 1
+      },
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug: Nuxt.js",
+      "configurations": [
+        "server: nuxt",
+        "client: chrome"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "Nuxt.js",
+        "order": 1
+      }
+    }
+  ]
+}
