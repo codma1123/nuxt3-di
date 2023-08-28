@@ -19,10 +19,13 @@
     "@": "${workspaceFolder}/src"
   },
   "path-intellisense.autoSlashAfterDirectory": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/package.json"
+      ],
+      "url": "https://json.schemastore.org/package",
+      "schema": true
+    }
+  ]
 }
