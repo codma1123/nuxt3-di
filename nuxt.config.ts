@@ -8,4 +8,7 @@ export default defineNuxtConfig({
 	css: ["vuetify/styles/main.sass"],
 	build: { transpile: ["vuetify"] },
 	vite: { resolve: { alias: { src: path.resolve(__dirname, "./src") } } },
+	modules: [
+		"@pinia/nuxt"
+	]
 });
