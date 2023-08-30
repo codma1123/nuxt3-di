@@ -1,20 +1,20 @@
-import { ApprovalStatus } from "src/contexts/contracts/request/interface/domain/approval-state";
+import { ApprovalStatus } from "src/contexts/contracts/request/domain/approval-state";
 
 export default interface RequestSummary {
   // 공사명
-  construction_name: string;
+  constructionName: string;
 
   // 업체명
-  company_name: string;
+  companyName: string;
 
   // 담당자 이메일
-  manager_email: string;
+  managerEmail: string;
 
   // 담당자 전화번호
-  manager_phone_number: string;
+  managerPhoneNumber: string;
 
   // 승인 상태
-  approval_status: ApprovalStatus;
+  approvalStatus: ApprovalStatus;
 
   // 신청 일자
   timestamp: Date;

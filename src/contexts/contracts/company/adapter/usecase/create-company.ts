@@ -2,12 +2,13 @@ import { ICompanyCommandRepository } from "src/contexts/contracts/company/interf
 import { CreateCompanyCommand, ICreateCompanyCommandUseCase } from "src/contexts/contracts/company/interface/usecase/create-company";
 
 export default class CreateCompanyCommandUseCase implements ICreateCompanyCommandUseCase {
-	private repository: ICompanyCommandRepository;
-	constructor(repository: ICompanyCommandRepository) {
-		this.repository = repository;
-	}
-	public async execute(command: CreateCompanyCommand): Promise<void> {
-		// TODO: Validation Check for command DTO
-		await this.repository.createCompany(command);
-	}
+  private repository: ICompanyCommandRepository;
+  constructor(repository: ICompanyCommandRepository) {
+    this.repository = repository;
+  }
+  public async execute(command: CreateCompanyCommand): Promise<void> {
+    // TODO: Validation Check for command DTO
+
+    await this.repository.createCompany(command);
+  }
 }

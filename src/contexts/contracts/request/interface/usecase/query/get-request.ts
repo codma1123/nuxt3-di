@@ -1,4 +1,3 @@
-import { Nullable } from "src/core/nullable";
 import { IQueryUseCase, Query } from "src/core/usecase";
 
 export interface GetRequestQuery extends Query {

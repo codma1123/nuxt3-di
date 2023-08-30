@@ -5,6 +5,7 @@ import { Nullable } from "src/core/nullable";
 import { Command, ICommandUseCase } from "src/core/usecase";
 
 export interface UpdateRequestCommand extends Command {
+  id: UUID;
   companyID: Nullable<UUID>;
   contractID: Nullable<UUID>;
   companyInformation: CompanyInformation;

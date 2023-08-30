@@ -1,4 +1,4 @@
-import { CompanyRole } from "src/contexts/contracts/request/interface/domain/company-role";
+import { CompanyRole } from "src/contexts/contracts/company/domain/company-role";
 
 export default interface CompanyInformation {
   // 업체명
@@ -8,17 +8,17 @@ export default interface CompanyInformation {
   address: string;
 
   // 대표자명
-  representer_name: string;
+  representerName: string;
 
   // 사업자등록번호
-  registration_number: string;
+  registrationNumber: string;
 
   // 사업자등록증 첨부파일 ID
-  registration_document_attachment_id: UUID;
+  registrationDocumentAttachmentID: UUID;
 
   // 업체 전화번호
-  phone_number: string;
+  phoneNumber: string;
 
   // 업체 역할 목록
-  roles: CompanyRole;
+  roles: CompanyRole[];
 }

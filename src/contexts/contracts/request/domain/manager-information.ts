@@ -1,4 +1,4 @@
-import { ManagerRole } from "src/contexts/contracts/request/interface/domain/manager-role";
+import { ManagerRole } from "src/contexts/contracts/request/domain/manager-role";
 
 export default interface ManagerInformation {
   // 관리자 이름
@@ -8,10 +8,10 @@ export default interface ManagerInformation {
   email: string;
 
   // 전화번호
-  phone_number: string;
+  phoneNumber: string;
 
   // 담당자 지정 여부
-  is_assigned: boolean;
+  isAssigned: boolean;
 
   // 관리자 역할 목록
   roles: Set<ManagerRole>;

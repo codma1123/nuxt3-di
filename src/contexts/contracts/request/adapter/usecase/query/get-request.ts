@@ -1,6 +1,6 @@
 import IGetRequestProxy from "src/contexts/contracts/request/interface/proxy/get-request";
 import { IRequestQueryRepository } from "src/contexts/contracts/request/interface/repository/query";
-import { GetRequestQuery, IGetRequestQueryUseCase } from "src/contexts/contracts/request/interface/usecase/query/get-requet";
+import { GetRequestQuery, IGetRequestQueryUseCase } from "src/contexts/contracts/request/interface/usecase/query/get-request";
 
 export class GetRequestQueryUseCase implements IGetRequestQueryUseCase {
   private repository: IRequestQueryRepository;

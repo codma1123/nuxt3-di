@@ -3,7 +3,7 @@
     <h1>Index Page</h1>
   </div>
   <div>
-    <div>detail: {{ detail }}</div>
+    <div class="detail">detail: {{ detail }}</div>
     <div>summary: {{ summary }}</div>
   </div>
 </template>

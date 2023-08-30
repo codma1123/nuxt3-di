@@ -1,26 +1,26 @@
-import TransferAmount from "src/contexts/contracts/request/interface/domain/transfer-amount";
+import TransferAmount from "src/contexts/contracts/request/domain/transfer-amount";
 
 export default interface ContractInformation {
   //공사명
-  construction_name: string;
+  constructionName: string;
 
   //발주처 업체 ID
-  client_company_id: UUID;
+  clientCompanyID: UUID;
 
   //착공일
-  construction_start_date: Date;
+  constructionStartDate: Date;
 
   //준공일
-  construction_end_date: Date;
+  constructionEndDate: Date;
 
   //운반 시작일
-  transfer_start_date: Date;
+  transferStartDate: Date;
 
   //운반 종료일
-  transfer_end_date: Date;
+  transferEndDate: Date;
 
   //총 예상 물량
-  expected_total_transfer_amount: TransferAmount;
+  expectedTotalTransferAmount: TransferAmount;
 
   //운반 품목 목록
   items: Set<UUID>;
