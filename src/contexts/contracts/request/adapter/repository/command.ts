@@ -18,13 +18,13 @@ export class RequestCommandRepository implements IRequestCommandRepository {
   }
 
   public async removeRequest(command: RemoveRequestCommand): Promise<void> {
-    const response = await this.client.post(`/requests/${command.id}`);
+    const response = await this.client.delete(`/requests/${command.id}`);
     if (response.status !== 200) throw new Error();
     return;
   }
 
   public async updateRequest(command: UpdateRequestCommand): Promise<void> {
-    const response = await this.client.put(`/requests/${command.companyID}`, { body: command });
+    const response = await this.client.put(`/requests/${command.company_id}`, { body: command });
     if (response.status !== 200) throw new Error();
     return;
   }

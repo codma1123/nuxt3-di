@@ -2,19 +2,19 @@ import { ApprovalStatus } from "src/contexts/contracts/request/domain/approval-s
 
 export default interface RequestSummary {
   // 공사명
-  constructionName: string;
+  construction_name: string;
 
   // 업체명
-  companyName: string;
+  company_name: string;
 
   // 담당자 이메일
-  managerEmail: string;
+  manager_email: string;
 
   // 담당자 전화번호
-  managerPhoneNumber: string;
+  manager_phone_number: string;
 
   // 승인 상태
-  approvalStatus: ApprovalStatus;
+  approval_status: ApprovalStatus;
 
   // 신청 일자
   timestamp: Date;

@@ -36,7 +36,7 @@ export class InvalidEmailError extends DomainError {
   }
 }
 
-export class InvalidPhoneNumberError extends DomainError {
+export class Invalidphone_numberError extends DomainError {
   constructor() {
     super(14006, "유효하지 않은 전화번호입니다.");
   }
@@ -66,13 +66,13 @@ export class ManagerInformationsIsEmptyError extends DomainError {
   }
 }
 
-export class ConstructionNameAlreadyExistsError extends DomainError {
+export class construction_nameAlreadyExistsError extends DomainError {
   constructor() {
     super(13000, "이미 등록된 계약 공사명입니다.");
   }
 }
 
-export class CompanyRegistrationNumberAlreadyExistsError extends DomainError {
+export class Companyregistration_numberAlreadyExistsError extends DomainError {
   constructor() {
     super(13001, "이미 등록된 사업자 등록번호입니다.");
   }

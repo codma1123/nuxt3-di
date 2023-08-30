@@ -8,16 +8,16 @@ export default interface CompanyInformation {
   address: string;
 
   // 대표자명
-  representerName: string;
+  representer_name: string;
 
   // 사업자등록번호
-  registrationNumber: string;
+  registration_number: string;
 
   // 사업자등록증 첨부파일 ID
-  registrationDocumentAttachmentID: UUID;
+  registration_document_attachment_id: UUID;
 
   // 업체 전화번호
-  phoneNumber: string;
+  phone_number: string;
 
   // 업체 역할 목록
   roles: CompanyRole[];

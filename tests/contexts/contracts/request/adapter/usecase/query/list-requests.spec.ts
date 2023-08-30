@@ -51,20 +51,20 @@ describe("contracts - request - 서비스 요청 목록 조회 서비스", () =>
 
     requestMap.set(id1, {
       timestamp: new Date(),
-      constructionName: "비투텍 공사",
-      companyName: "비투텍",
-      managerEmail: "jh.lee@b2groups.com",
-      managerPhoneNumber: "010-9922-0335",
-      approvalStatus: "심사 필요",
+      construction_name: "비투텍 공사",
+      company_name: "비투텍",
+      manager_email: "jh.lee@b2groups.com",
+      manager_phone_number: "010-9922-0335",
+      approval_status: "심사 필요",
     });
 
     requestMap.set(id2, {
       timestamp: new Date(),
-      constructionName: "아이앤유니 공사",
-      companyName: "아이앤유니",
-      managerEmail: "sj.beak@b2groups.com",
-      managerPhoneNumber: "010-9922-0333",
-      approvalStatus: "심사 필요",
+      construction_name: "아이앤유니 공사",
+      company_name: "아이앤유니",
+      manager_email: "sj.beak@b2groups.com",
+      manager_phone_number: "010-9922-0333",
+      approval_status: "심사 필요",
     });
   });
 

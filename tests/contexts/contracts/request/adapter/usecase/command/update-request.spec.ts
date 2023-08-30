@@ -13,7 +13,7 @@ import {
   InvalidTransferDateRangeError,
   ItemsIsEmptyError,
   InvalidEmailError,
-  InvalidPhoneNumberError,
+  Invalidphone_numberError,
   ManagerRolesIsEmptyError,
   ManagerInformationsIsEmptyError,
   AssignedManagerCanOnlyOneError,
@@ -54,42 +54,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
 
     requestMap.set(id, {
       id,
-      contractID: uuid4(),
-      companyInformation: {
+      contract_id: uuid4(),
+      company_information: {
         name: "수정전",
         address: "",
-        representerName: "",
-        registrationNumber: "",
-        registrationDocumentAttachmentID: uuid4(),
-        phoneNumber: "",
+        representer_name: "",
+        registration_number: "",
+        registration_document_attachment_id: uuid4(),
+        phone_number: "",
         roles: ["건설사"],
       },
-      companyID: null,
-      contractInformation: {
-        constructionName: "",
-        clientCompanyID: uuid4(),
-        constructionStartDate: today,
-        constructionEndDate: tomorrow,
-        transferStartDate: today,
-        transferEndDate: tomorrow,
-        expectedTotalTransferAmount: {
+      company_id: null,
+      contract_information: {
+        construction_name: "",
+        client_company_id: uuid4(),
+        construction_start_date: today,
+        construction_end_date: tomorrow,
+        transfer_start_date: today,
+        transfer_end_date: tomorrow,
+        expected_total_transfer_amount: {
           amount: 30,
           unit: "입방미터(m3)",
         },
         items: new Set<UUID>([uuid4()]),
       },
-      managerInformations: [
+      manager_informations: [
         {
           email: "jh.lee@b2groups.com",
-          phoneNumber: "010-9922-0333",
-          isAssigned: true,
+          phone_number: "010-9922-0333",
+          is_assigned: true,
           name: "이준하",
           roles: new Set<ManagerRole>(["감리"]),
         },
         {
           email: "sj.beak@b2groups.com",
-          phoneNumber: "010-9922-0335",
-          isAssigned: false,
+          phone_number: "010-9922-0335",
+          is_assigned: false,
           name: "백세종",
           roles: new Set<ManagerRole>(["감리"]),
         },
@@ -102,35 +102,35 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: [],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 20,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -144,35 +144,35 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
+            representer_name: "",
+            registration_number: "",
             roles: ["건설사"],
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: -5,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -186,35 +186,35 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: tomorrow,
-            constructionEndDate: today,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: tomorrow,
+            construction_end_date: today,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -228,35 +228,35 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: tomorrow,
-            transferEndDate: today,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: tomorrow,
+            transfer_end_date: today,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -270,42 +270,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set(),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -319,42 +319,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -368,48 +368,48 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-033",
-              isAssigned: true,
+              phone_number: "010-9922-033",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
           ],
         })
-    ).rejects.toThrowError(InvalidPhoneNumberError);
+    ).rejects.toThrowError(Invalidphone_numberError);
   });
 
   test("수정 할 관리자 역할 목록이 비어있을 수 없다.", () => {
@@ -417,42 +417,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set(),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -466,31 +466,31 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [],
+          manager_informations: [],
         })
     ).rejects.toThrowError(ManagerInformationsIsEmptyError);
   });
@@ -500,42 +500,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -549,42 +549,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id,
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -598,42 +598,42 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
       async () =>
         await updateRequest.execute({
           id: uuid4(),
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -643,52 +643,52 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
   });
 
   test("서비스 요청을 수정한다.", async () => {
-    expect(requestMap.get(id)?.companyInformation.name).toBe("수정전");
+    expect(requestMap.get(id)?.company_information.name).toBe("수정전");
 
     await updateRequest.execute({
       id,
-      contractID: uuid4(),
-      companyInformation: {
+      contract_id: uuid4(),
+      company_information: {
         name: "수정후",
         address: "",
-        representerName: "",
-        registrationNumber: "",
-        registrationDocumentAttachmentID: uuid4(),
-        phoneNumber: "",
+        representer_name: "",
+        registration_number: "",
+        registration_document_attachment_id: uuid4(),
+        phone_number: "",
         roles: ["건설사"],
       },
-      companyID: null,
-      contractInformation: {
-        constructionName: "",
-        clientCompanyID: uuid4(),
-        constructionStartDate: today,
-        constructionEndDate: tomorrow,
-        transferStartDate: today,
-        transferEndDate: tomorrow,
-        expectedTotalTransferAmount: {
+      company_id: null,
+      contract_information: {
+        construction_name: "",
+        client_company_id: uuid4(),
+        construction_start_date: today,
+        construction_end_date: tomorrow,
+        transfer_start_date: today,
+        transfer_end_date: tomorrow,
+        expected_total_transfer_amount: {
           amount: 30,
           unit: "입방미터(m3)",
         },
         items: new Set<UUID>([uuid4()]),
       },
-      managerInformations: [
+      manager_informations: [
         {
           email: "jh.lee@b2groups.com",
-          phoneNumber: "010-9922-0333",
-          isAssigned: true,
+          phone_number: "010-9922-0333",
+          is_assigned: true,
           name: "이준하 수정후",
           roles: new Set<ManagerRole>(["감리"]),
         },
         {
           email: "sj.beak@b2groups.com",
-          phoneNumber: "010-9922-0335",
-          isAssigned: false,
+          phone_number: "010-9922-0335",
+          is_assigned: false,
           name: "백세종",
           roles: new Set<ManagerRole>(["감리"]),
         },
       ],
     });
 
-    expect(requestMap.get(id)?.companyInformation.name).toBe("수정후");
+    expect(requestMap.get(id)?.company_information.name).toBe("수정후");
   });
 });

@@ -10,7 +10,7 @@ import {
   CompanyRolesIsEmptyError,
   InvalidConstructionDateRangeError,
   InvalidEmailError,
-  InvalidPhoneNumberError,
+  Invalidphone_numberError,
   InvalidTransferDateRangeError,
   ItemsIsEmptyError,
   ManagerInformationsIsEmptyError,
@@ -51,35 +51,35 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: [],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 20,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -92,35 +92,35 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
+            representer_name: "",
+            registration_number: "",
             roles: ["건설사"],
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: -5,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -133,35 +133,35 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: tomorrow,
-            constructionEndDate: today,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: tomorrow,
+            construction_end_date: today,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -174,35 +174,35 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: tomorrow,
-            transferEndDate: today,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: tomorrow,
+            transfer_end_date: today,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -215,42 +215,42 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set(),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -263,42 +263,42 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -311,90 +311,90 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-033",
-              isAssigned: true,
+              phone_number: "010-9922-033",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
           ],
         })
-    ).rejects.toThrowError(InvalidPhoneNumberError);
+    ).rejects.toThrowError(Invalidphone_numberError);
   });
 
   test("관리자 역할 목록이 비어있을 수 없다.", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set(),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: false,
+              phone_number: "010-9922-0335",
+              is_assigned: false,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -407,31 +407,31 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [],
+          manager_informations: [],
         })
     ).rejects.toThrowError(ManagerInformationsIsEmptyError);
   });
@@ -440,42 +440,42 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(
       async () =>
         await createRequest.execute({
-          contractID: uuid4(),
-          companyInformation: {
+          contract_id: uuid4(),
+          company_information: {
             name: "",
             address: "",
-            representerName: "",
-            registrationNumber: "",
-            registrationDocumentAttachmentID: uuid4(),
-            phoneNumber: "",
+            representer_name: "",
+            registration_number: "",
+            registration_document_attachment_id: uuid4(),
+            phone_number: "",
             roles: ["건설사"],
           },
-          companyID: null,
-          contractInformation: {
-            constructionName: "",
-            clientCompanyID: uuid4(),
-            constructionStartDate: today,
-            constructionEndDate: tomorrow,
-            transferStartDate: today,
-            transferEndDate: tomorrow,
-            expectedTotalTransferAmount: {
+          company_id: null,
+          contract_information: {
+            construction_name: "",
+            client_company_id: uuid4(),
+            construction_start_date: today,
+            construction_end_date: tomorrow,
+            transfer_start_date: today,
+            transfer_end_date: tomorrow,
+            expected_total_transfer_amount: {
               amount: 30,
               unit: "입방미터(m3)",
             },
             items: new Set<UUID>([uuid4()]),
           },
-          managerInformations: [
+          manager_informations: [
             {
               email: "jh.lee@b2groups.com",
-              phoneNumber: "010-9922-0333",
-              isAssigned: true,
+              phone_number: "010-9922-0333",
+              is_assigned: true,
               name: "이준하",
               roles: new Set<ManagerRole>(["감리"]),
             },
             {
               email: "sj.beak@b2groups.com",
-              phoneNumber: "010-9922-0335",
-              isAssigned: true,
+              phone_number: "010-9922-0335",
+              is_assigned: true,
               name: "백세종",
               roles: new Set<ManagerRole>(["감리"]),
             },
@@ -488,42 +488,42 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
     expect(requestMap.size).toBe(0);
 
     await createRequest.execute({
-      contractID: uuid4(),
-      companyInformation: {
+      contract_id: uuid4(),
+      company_information: {
         name: "",
         address: "",
-        representerName: "",
-        registrationNumber: "",
-        registrationDocumentAttachmentID: uuid4(),
-        phoneNumber: "",
+        representer_name: "",
+        registration_number: "",
+        registration_document_attachment_id: uuid4(),
+        phone_number: "",
         roles: ["건설사"],
       },
-      companyID: null,
-      contractInformation: {
-        constructionName: "",
-        clientCompanyID: uuid4(),
-        constructionStartDate: today,
-        constructionEndDate: tomorrow,
-        transferStartDate: today,
-        transferEndDate: tomorrow,
-        expectedTotalTransferAmount: {
+      company_id: null,
+      contract_information: {
+        construction_name: "",
+        client_company_id: uuid4(),
+        construction_start_date: today,
+        construction_end_date: tomorrow,
+        transfer_start_date: today,
+        transfer_end_date: tomorrow,
+        expected_total_transfer_amount: {
           amount: 30,
           unit: "입방미터(m3)",
         },
         items: new Set<UUID>([uuid4()]),
       },
-      managerInformations: [
+      manager_informations: [
         {
           email: "jh.lee@b2groups.com",
-          phoneNumber: "010-9922-0333",
-          isAssigned: true,
+          phone_number: "010-9922-0333",
+          is_assigned: true,
           name: "이준하",
           roles: new Set<ManagerRole>(["감리"]),
         },
         {
           email: "sj.beak@b2groups.com",
-          phoneNumber: "010-9922-0335",
-          isAssigned: false,
+          phone_number: "010-9922-0335",
+          is_assigned: false,
           name: "백세종",
           roles: new Set<ManagerRole>(["감리"]),
         },

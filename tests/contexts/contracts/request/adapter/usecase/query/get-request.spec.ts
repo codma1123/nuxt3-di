@@ -52,47 +52,47 @@ describe("contracts - request - 서비스 요청 단일 조회 서비스", () =>
 
     requestMap.set(id, {
       id,
-      contractID: uuid4(),
-      companyInformation: {
+      contract_id: uuid4(),
+      company_information: {
         name: "",
         address: "",
-        representerName: "",
-        registrationNumber: "",
-        registrationDocumentAttachmentID: uuid4(),
-        phoneNumber: "",
+        representer_name: "",
+        registration_number: "",
+        registration_document_attachment_id: uuid4(),
+        phone_number: "",
         roles: ["건설사"],
       },
-      companyID: null,
-      contractInformation: {
-        constructionName: "",
-        clientCompanyID: uuid4(),
-        constructionStartDate: today,
-        constructionEndDate: tomorrow,
-        transferStartDate: today,
-        transferEndDate: tomorrow,
-        expectedTotalTransferAmount: {
+      company_id: null,
+      contract_information: {
+        construction_name: "",
+        client_company_id: uuid4(),
+        construction_start_date: today,
+        construction_end_date: tomorrow,
+        transfer_start_date: today,
+        transfer_end_date: tomorrow,
+        expected_total_transfer_amount: {
           amount: 30,
           unit: "입방미터(m3)",
         },
         items: new Set<UUID>([uuid4()]),
       },
-      managerInformations: [
+      manager_informations: [
         {
           email: "jh.lee@b2groups.com",
-          phoneNumber: "010-9922-0333",
-          isAssigned: true,
+          phone_number: "010-9922-0333",
+          is_assigned: true,
           name: "이준하",
           roles: new Set<ManagerRole>(["감리"]),
         },
         {
           email: "sj.beak@b2groups.com",
-          phoneNumber: "010-9922-0335",
-          isAssigned: false,
+          phone_number: "010-9922-0335",
+          is_assigned: false,
           name: "백세종",
           roles: new Set<ManagerRole>(["감리"]),
         },
       ],
-      approvalStatus: "심사 필요",
+      approval_status: "심사 필요",
       timestamp: new Date(),
     });
 
@@ -109,6 +109,6 @@ describe("contracts - request - 서비스 요청 단일 조회 서비스", () =>
     expect(requestStoreState.detail).toBeFalsy();
     await getRequest.execute({ id });
     expect(requestStoreState.detail?.id).toBe(id);
-    expect(requestStoreState.detail?.managerInformations[0].name).toBe("이준하");
+    expect(requestStoreState.detail?.manager_informations[0].name).toBe("이준하");
   });
 });
