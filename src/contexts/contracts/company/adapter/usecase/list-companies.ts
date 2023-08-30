@@ -10,6 +10,7 @@ export default class ListCompaniesQueryUseCase implements IListCompaniesQueryUse
 		this.proxy = proxy;
 	}
 	public async execute(query: ListCompaniesQuery): Promise<void> {
+		// TODO: Validation Check for query DTO
 		const state = await this.proxy.execute(query);
 		this.repository.setSummary(state);
 	}

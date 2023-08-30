@@ -9,7 +9,7 @@ export default class CompanyCommandRepository implements ICompanyCommandReposito
 	}
 	public async createCompany(command: CreateCompanyCommand): Promise<void> {
 		const response = await this.client.post<null>("/companies", { body: command });
-		if (response.status === 200) throw new Error();
+		if (response.status !== 200) throw new Error();
 		return;
 	}
 }

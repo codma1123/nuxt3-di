@@ -7,6 +7,7 @@ export default class CreateCompanyCommandUseCase implements ICreateCompanyComman
 		this.repository = repository;
 	}
 	public async execute(command: CreateCompanyCommand): Promise<void> {
+		// TODO: Validation Check for command DTO
 		await this.repository.createCompany(command);
 	}
 }
