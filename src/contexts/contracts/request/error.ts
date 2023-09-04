@@ -36,7 +36,7 @@ export class InvalidEmailError extends DomainError {
   }
 }
 
-export class Invalidphone_numberError extends DomainError {
+export class InvalidPhoneNumberError extends DomainError {
   constructor() {
     super(14006, "유효하지 않은 전화번호입니다.");
   }

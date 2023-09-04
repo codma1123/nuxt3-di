@@ -1,13 +1,13 @@
 import { ManagerRole } from "src/contexts/contracts/request/domain/manager-role";
 
 export default interface ManagerInformation {
-  // 관리자 이름
+  // 담당자 이름
   name: string;
 
-  // 이메일 주소
+  // 담당자 이메일 주소
   email: string;
 
-  // 전화번호
+  // 담당자 전화번호
   phone_number: string;
 
   // 담당자 지정 여부

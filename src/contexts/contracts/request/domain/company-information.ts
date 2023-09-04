@@ -1,4 +1,5 @@
 import { CompanyRole } from "src/contexts/contracts/company/domain/company-role";
+import { Nullable } from "src/core/nullable";
 
 export default interface CompanyInformation {
   // 업체명
@@ -17,7 +18,7 @@ export default interface CompanyInformation {
   registration_document_attachment_id: UUID;
 
   // 업체 전화번호
-  phone_number: string;
+  phone_number: Nullable<string>;
 
   // 업체 역할 목록
   roles: CompanyRole[];

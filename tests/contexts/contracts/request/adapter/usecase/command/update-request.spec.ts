@@ -13,12 +13,14 @@ import {
   InvalidTransferDateRangeError,
   ItemsIsEmptyError,
   InvalidEmailError,
-  Invalidphone_numberError,
+  InvalidPhoneNumberError,
   ManagerRolesIsEmptyError,
   ManagerInformationsIsEmptyError,
   AssignedManagerCanOnlyOneError,
   RequestNotExistsError,
 } from "src/contexts/contracts/request/error";
+import { ApproveRequestCommand } from "src/contexts/contracts/request/interface/usecase/command/approve-request";
+import { RejectRequestCommand } from "src/contexts/contracts/request/interface/usecase/command/reject-request";
 
 const requestMap = new Map<UUID, UpdateRequestCommand>();
 
@@ -27,6 +29,12 @@ const tomorrow = new Date(today);
 tomorrow.setDate(today.getDate() + 1);
 
 class FakeRequestCommandRepository implements IRequestCommandRepository {
+  approveRequest(command: ApproveRequestCommand): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  rejectRequest(command: RejectRequestCommand): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
   createRequest(command: CreateRequestCommand): Promise<void> {
     throw new Error("Method not implemented.");
   }
@@ -409,7 +417,7 @@ describe("contracts - request - 서비스 요청 변경 서비스", () => {
             },
           ],
         })
-    ).rejects.toThrowError(Invalidphone_numberError);
+    ).rejects.toThrowError(InvalidPhoneNumberError);
   });
 
   test("수정 할 관리자 역할 목록이 비어있을 수 없다.", () => {

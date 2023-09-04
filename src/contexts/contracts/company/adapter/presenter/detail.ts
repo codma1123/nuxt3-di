@@ -5,8 +5,9 @@ import ICompanyDetailPresenter from "src/contexts/contracts/company/interface/pr
 import { Nullable } from "src/core/nullable";
 
 export default class CompanyDetailPresenter implements ICompanyDetailPresenter {
-	private store: ICompanyQueryStore = useCompanyQueryStore();
-	public getState(): globalThis.Ref<Nullable<CompanyDetail>> {
-		return storeToRefs(this.store).detail;
-	}
+  private store: ICompanyQueryStore = useCompanyQueryStore();
+
+  public getState(): Nullable<CompanyDetail> {
+    return this.store.detail;
+  }
 }

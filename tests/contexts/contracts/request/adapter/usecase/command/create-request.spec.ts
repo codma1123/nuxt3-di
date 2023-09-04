@@ -10,7 +10,7 @@ import {
   CompanyRolesIsEmptyError,
   InvalidConstructionDateRangeError,
   InvalidEmailError,
-  Invalidphone_numberError,
+  InvalidPhoneNumberError,
   InvalidTransferDateRangeError,
   ItemsIsEmptyError,
   ManagerInformationsIsEmptyError,
@@ -18,10 +18,18 @@ import {
   TransferAmmountCannotBeNegativeError,
 } from "src/contexts/contracts/request/error";
 import { ManagerRole } from "src/contexts/contracts/request/domain/manager-role";
+import { ApproveRequestCommand } from "src/contexts/contracts/request/interface/usecase/command/approve-request";
+import { RejectRequestCommand } from "src/contexts/contracts/request/interface/usecase/command/reject-request";
 
 const requestMap = new Map<UUID, CreateRequestCommand>();
 
 class FakeRequestCommandRepository implements IRequestCommandRepository {
+  approveRequest(command: ApproveRequestCommand): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  rejectRequest(command: RejectRequestCommand): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
   async createRequest(command: CreateRequestCommand): Promise<void> {
     requestMap.set(uuid4(), command);
   }
@@ -352,7 +360,7 @@ describe("contracts - request - 서비스 요청 생성 서비스", () => {
             },
           ],
         })
-    ).rejects.toThrowError(Invalidphone_numberError);
+    ).rejects.toThrowError(InvalidPhoneNumberError);
   });
 
   test("관리자 역할 목록이 비어있을 수 없다.", () => {

@@ -3,10 +3,13 @@ import { defineConfig } from "vitest/config";
 import tsconfigPaths from "vite-tsconfig-paths";
 import autoImport from "unplugin-auto-import/vite";
 export default defineConfig({
-  plugins: [tsconfigPaths(), vue(), autoImport({ imports: ["vue"] })],
+  plugins: [tsconfigPaths(), vue(), autoImport({ imports: ["vue", "vue-router"] })],
   test: {
     globals: true,
     environment: "jsdom",
+    deps: {
+      inline: ["vuetify"],
+    },
     coverage: {
       enabled: true,
       provider: "istanbul",

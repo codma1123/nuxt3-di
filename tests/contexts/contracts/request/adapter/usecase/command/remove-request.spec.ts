@@ -6,10 +6,18 @@ import { UpdateRequestCommand } from "src/contexts/contracts/request/interface/u
 import { beforeEach, describe, test, expect } from "vitest";
 import uuid4 from "src/core/uuid";
 import { RequestNotExistsError } from "src/contexts/contracts/request/error";
+import { ApproveRequestCommand } from "src/contexts/contracts/request/interface/usecase/command/approve-request";
+import { RejectRequestCommand } from "src/contexts/contracts/request/interface/usecase/command/reject-request";
 
 const requestMap = new Map<UUID, {}>();
 
 class FakeRequestCommandRepository implements IRequestCommandRepository {
+  approveRequest(command: ApproveRequestCommand): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
+  rejectRequest(command: RejectRequestCommand): Promise<void> {
+    throw new Error("Method not implemented.");
+  }
   createRequest(command: CreateRequestCommand): Promise<void> {
     throw new Error("Method not implemented.");
   }
